@@ -1,0 +1,1 @@
+from .sync import sync_registered_plugins_to_db
