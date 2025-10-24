@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8494541b-8d6d-48b6-937e-6331431688a4" name="Changes" comment="First init V1.0.0">
-      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+    <list default="true" id="8494541b-8d6d-48b6-937e-6331431688a4" name="Changes" comment="First init V1.0.0 - Built">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1761298954613</updated>
       <workItem from="1761298955698" duration="21870000" />
-      <workItem from="1761321791159" duration="4436000" />
+      <workItem from="1761321791159" duration="5288000" />
     </task>
     <task id="LOCAL-00001" summary="First init V1.0.0">
       <option name="closed" value="true" />
@@ -85,7 +84,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761323657967</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="First init V1.0.0 - Built">
+      <option name="closed" value="true" />
+      <created>1761326620256</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1761326620256</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,6 +100,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First init V1.0.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="First init V1.0.0" />
+    <MESSAGE value="First init V1.0.0 - Built" />
+    <option name="LAST_COMMIT_MESSAGE" value="First init V1.0.0 - Built" />
   </component>
 </project>
