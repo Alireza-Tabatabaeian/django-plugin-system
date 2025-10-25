@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8494541b-8d6d-48b6-937e-6331431688a4" name="Changes" comment="First init V1.0.0 - Built">
+    <list default="true" id="8494541b-8d6d-48b6-937e-6331431688a4" name="Changes" comment="allow custom get_plugin method to accept input arguments.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/helpers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +77,8 @@
       <workItem from="1761298955698" duration="21870000" />
       <workItem from="1761321791159" duration="5288000" />
       <workItem from="1761370334382" duration="1850000" />
-      <workItem from="1761373981201" duration="128000" />
+      <workItem from="1761373981201" duration="684000" />
+      <workItem from="1761383780872" duration="181000" />
     </task>
     <task id="LOCAL-00001" summary="First init V1.0.0">
       <option name="closed" value="true" />
@@ -95,7 +96,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761326620256</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="allow custom get_plugin method to accept input arguments.">
+      <option name="closed" value="true" />
+      <created>1761374175962</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1761374175962</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,6 +113,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First init V1.0.0" />
     <MESSAGE value="First init V1.0.0 - Built" />
-    <option name="LAST_COMMIT_MESSAGE" value="First init V1.0.0 - Built" />
+    <MESSAGE value="allow custom get_plugin method to accept input arguments." />
+    <option name="LAST_COMMIT_MESSAGE" value="allow custom get_plugin method to accept input arguments." />
   </component>
 </project>

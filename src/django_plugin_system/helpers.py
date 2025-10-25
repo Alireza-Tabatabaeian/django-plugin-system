@@ -1,11 +1,10 @@
 from typing import Type, TypeVar, Optional
 
-from .models import PluginType
-
 T = TypeVar("T")
 
 
 def get_plugin_instance(type_name: str, manager: str) -> Optional[object]:
+    from .models import PluginType
     try:
         pt = PluginType.objects.get(name=type_name, manager=manager)
     except PluginType.DoesNotExist:
@@ -18,6 +17,7 @@ def get_plugin_instance(type_name: str, manager: str) -> Optional[object]:
 
 
 def get_plugin_class(type_name: str, manager: str) -> Optional[Type[T]]:
+    from .models import PluginType
     try:
         pt = PluginType.objects.get(name=type_name, manager=manager)
     except PluginType.DoesNotExist:
