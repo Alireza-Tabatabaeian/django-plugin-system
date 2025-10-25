@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8494541b-8d6d-48b6-937e-6331431688a4" name="Changes" comment="allow custom get_plugin method to accept input arguments.">
+    <list default="true" id="8494541b-8d6d-48b6-937e-6331431688a4" name="Changes" comment="references to .models removed from init file, to avoid app ready error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/managment/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/management/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/managment/commands/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/management/commands/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/managment/commands/pluginsync.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/management/commands/pluginsync.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +80,8 @@
       <workItem from="1761321791159" duration="5288000" />
       <workItem from="1761370334382" duration="1850000" />
       <workItem from="1761373981201" duration="684000" />
-      <workItem from="1761383780872" duration="181000" />
+      <workItem from="1761383780872" duration="762000" />
+      <workItem from="1761386680612" duration="48000" />
     </task>
     <task id="LOCAL-00001" summary="First init V1.0.0">
       <option name="closed" value="true" />
@@ -104,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761374175962</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="references to .models removed from init file, to avoid app ready error">
+      <option name="closed" value="true" />
+      <created>1761384104363</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761384104363</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +125,7 @@
     <MESSAGE value="First init V1.0.0" />
     <MESSAGE value="First init V1.0.0 - Built" />
     <MESSAGE value="allow custom get_plugin method to accept input arguments." />
-    <option name="LAST_COMMIT_MESSAGE" value="allow custom get_plugin method to accept input arguments." />
+    <MESSAGE value="references to .models removed from init file, to avoid app ready error" />
+    <option name="LAST_COMMIT_MESSAGE" value="references to .models removed from init file, to avoid app ready error" />
   </component>
 </project>

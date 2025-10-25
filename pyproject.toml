@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "django-plugin-system"
-version = "1.0.1"
+version = "1.0.3"
 description = "A lightweight plugin registry for Django with admin management and registry→DB sync."
 readme = "README.md"
 requires-python = ">=3.10"
