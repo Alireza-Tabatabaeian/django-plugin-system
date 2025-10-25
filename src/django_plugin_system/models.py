@@ -40,12 +40,12 @@ class PluginType(models.Model):
     def get_active_plugins(self) -> 'List[PluginItem]':
         return PluginItem.get_available_plugins(self)
 
-    def get_single_plugin(self) -> 'PluginItem | None':
+    def get_single_plugin(self,*args,**kwargs) -> 'PluginItem | None':
         try:
             plugin_type = load_plugin_type(self.name, self.manager)
             get_plugin = plugin_type.get('get_plugin')
             if get_plugin:
-                return get_plugin(self)
+                return get_plugin(self, *args, **kwargs)
         except KeyError:
             return None
         return PluginItem.default_get_single_plugin(self)

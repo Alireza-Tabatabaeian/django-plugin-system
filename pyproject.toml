@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "django-plugin-system"
-version = "1.0.0"
+version = "1.0.1"
 description = "A lightweight plugin registry for Django with admin management and registry→DB sync."
 readme = "README.md"
 requires-python = ">=3.10"
-license-files = ["LICENSE"]
+license-files = ["LICEN[CS]E*"]
 authors = [
   { name = "Alireza Tabatabaeian", email = "alireza.tabatabaeian@gmail.com" }
 ]
@@ -42,7 +42,8 @@ Issues = "https://github.com/Alireza-Tabatabaeian/django-plugin-system/issues"
 include-package-data = true
 
 [tool.setuptools.packages.find]
-include = ["src.django_plugin_system", "src.django_plugin_system.*"]
+where = ["src"]
+include = ["django_plugin_system", "django_plugin_system.*"]
 
 [tool.setuptools.package-data]
 # If you add migrations/templates/static later, keep them here.
