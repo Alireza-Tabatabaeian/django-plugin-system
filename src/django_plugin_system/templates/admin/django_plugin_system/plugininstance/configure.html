@@ -1,0 +1,25 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {% if config_form is not None %}
+    <fieldset class="module aligned">
+        <h2>Configuration</h2>
+        {{ config_form.as_p }}
+    </fieldset>
+    {%endif%}
+
+    <fieldset class="module aligned">
+        <h2>Instance settings</h2>
+        {{ meta_form.as_p }}
+    </fieldset>
+
+    <div class="submit-row">
+        <input type="submit" value="Save" class="default">
+    </div>
+</form>
+{% endblock %}

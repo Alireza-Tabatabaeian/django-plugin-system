@@ -28,5 +28,7 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS("Plugin registry sync completed"))
         self.stdout.write(f"- Types created: {result['types_created']}, found: {result['types_found']}")
         self.stdout.write(f"- Items created: {result['items_created']}, found: {result['items_found']}")
+        self.stdout.write(f"- Instances created: {result['instances_created']}, found: {result['instances_found']}")
         if prune:
-            self.stdout.write(f"- Pruned types: {result['pruned_types']}, pruned items: {result['pruned_items']}")
+            self.stdout.write(
+                f"- Pruned types: {result['pruned_types']}, pruned items: {result['pruned_items']}, pruned instances: {result['pruned_instances']}")

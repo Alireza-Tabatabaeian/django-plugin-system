@@ -11,4 +11,4 @@ def sync_registered_plugins_signal(sender, **kwargs):
     if getattr(sender, "name", None) != APP_LABEL:
         return
     # create-only; do not overwrite admin-edited fields
-    sync_registered_plugins_to_db(mode="create", prune=True)
+    sync_registered_plugins_to_db(mode="create", prune=False)

@@ -1,4 +1,6 @@
 /.idea
 
 /.venv
+/plugin_system
 /dist
+/django_plugin_system.egg-info

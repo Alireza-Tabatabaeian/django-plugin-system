@@ -1,0 +1,17 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h1>Select plugin item</h1>
+
+<ul>
+    {% for item in items %}
+    <li>
+        <a href="{% url 'admin:django_plugin_system_plugininstance_create_config' item.id %}">
+            {{ item.plugin_type.name }} / {{ item.name }}
+        </a>
+    </li>
+    {% empty %}
+    <li>No configurable plugin items found.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

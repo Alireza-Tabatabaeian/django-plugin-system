@@ -4,12 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8494541b-8d6d-48b6-937e-6331431688a4" name="Changes" comment="references to .models removed from init file, to avoid app ready error">
+    <list default="true" id="8494541b-8d6d-48b6-937e-6331431688a4" name="Changes" comment="management was typed incorrectly">
+      <change afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/django_plugin_system/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/django_plugin_system/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/django_plugin_system/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/django_plugin_system/plugin_core.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/django_plugin_system/templates/admin/django_plugin_system/plugininstance/configure.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/django_plugin_system/templates/admin/django_plugin_system/plugininstance/select_item.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_plugin_core.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_register_and_sync.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/django-plugin-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/django-plugin-system.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/managment/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/management/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/managment/commands/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/management/commands/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/managment/commands/pluginsync.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/management/commands/pluginsync.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/management/commands/pluginsync.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/management/commands/pluginsync.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/register.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/register.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/services/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/services/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/services/sync.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/services/sync.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/signals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/storage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,11 +43,28 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Alireza-Tabatabaeian&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:Alireza-Tabatabaeian/django-plugin-system.git&quot;,
+    &quot;accountId&quot;: &quot;661bfc22-1433-4cf5-bc6c-5df1b2f0fa09&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -36,9 +76,17 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.plugin_core.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test-register.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
@@ -61,11 +109,41 @@
       <recent name="C:\FunProjects\django-plugin-system\src\django_plugin_system" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="test-register" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="django-plugin-system" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test-register.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test-register" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-PY-251.28293.52" />
-        <option value="bundled-python-sdk-c84de207d46e-64d779b69b7a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.28293.52" />
+        <option value="bundled-python-sdk-2653e85de345-6d6dccd035ac-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.31033.139" />
       </set>
     </attachedChunks>
   </component>
@@ -81,7 +159,21 @@
       <workItem from="1761370334382" duration="1850000" />
       <workItem from="1761373981201" duration="684000" />
       <workItem from="1761383780872" duration="762000" />
-      <workItem from="1761386680612" duration="48000" />
+      <workItem from="1761386680612" duration="938000" />
+      <workItem from="1761399710438" duration="59000" />
+      <workItem from="1767603899192" duration="6118000" />
+      <workItem from="1776726027004" duration="2967000" />
+      <workItem from="1778586451445" duration="8381000" />
+      <workItem from="1778663418825" duration="4388000" />
+      <workItem from="1778940407331" duration="362000" />
+      <workItem from="1779192977333" duration="5373000" />
+      <workItem from="1779257175021" duration="7499000" />
+      <workItem from="1779274082648" duration="8294000" />
+      <workItem from="1779612635509" duration="10414000" />
+      <workItem from="1779712033137" duration="10956000" />
+      <workItem from="1779773400894" duration="4627000" />
+      <workItem from="1779783193926" duration="10953000" />
+      <workItem from="1780475222073" duration="679000" />
     </task>
     <task id="LOCAL-00001" summary="First init V1.0.0">
       <option name="closed" value="true" />
@@ -115,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761384104363</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="management was typed incorrectly">
+      <option name="closed" value="true" />
+      <created>1761386840589</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761386840589</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +226,11 @@
     <MESSAGE value="First init V1.0.0 - Built" />
     <MESSAGE value="allow custom get_plugin method to accept input arguments." />
     <MESSAGE value="references to .models removed from init file, to avoid app ready error" />
-    <option name="LAST_COMMIT_MESSAGE" value="references to .models removed from init file, to avoid app ready error" />
+    <MESSAGE value="management was typed incorrectly" />
+    <option name="LAST_COMMIT_MESSAGE" value="management was typed incorrectly" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/django_plugin_system$plugin_core.coverage" NAME="plugin_core Coverage Results" MODIFIED="1779723645129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/django_plugin_system" />
+    <SUITE FILE_PATH="coverage/django_plugin_system$test_register.coverage" NAME="test-register Coverage Results" MODIFIED="1779720718891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>
