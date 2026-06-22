@@ -206,9 +206,15 @@ class PluginInstance(models.Model):
         )
 
     def load_instance(self):
-        class_imp = self.item.load_plugin_class()
-        return None if class_imp is None else class_imp(self.config)
+        """
+        deprecated since 2.0.2
+        will be removed in 3.0.0, use load_implementation instead.
+        """
+        return self.load_implementation()
 
+    def load_implementation(self):
+        class_imp = self.item.load_plugin_class()
+        return None if class_imp is None else class_imp(self)
 
 # Cache invalidation when items change
 @receiver(post_save, sender=PluginInstance)

@@ -1,8 +1,12 @@
+from __future__ import annotations
+
 from abc import ABC
-from typing import Any, ClassVar, Type
-from typing import Dict
+from typing import Any, ClassVar, Type, TYPE_CHECKING
 
 from django.forms import Form
+
+if TYPE_CHECKING:
+    from .models import PluginInstance
 
 
 class PluginConfiguration:
@@ -46,6 +50,11 @@ class BasePluginType(ABC):
     """
     description about the plugin type (optional), defaults to empty string
     """
+    _plugin_item: BasePluginItem
+
+    @property
+    def plugin_item(self) -> BasePluginItem:
+        return self._plugin_item
 
     def __init_subclass__(cls, **kwargs):
         super().__init_subclass__(**kwargs)
@@ -67,6 +76,9 @@ class BasePluginType(ABC):
         if not hasattr(cls, 'name'):
             raise TypeError("Plugin type class must have name")
 
+    def __init__(self, plugin_item: BasePluginItem):
+        self._plugin_item = plugin_item
+
 
 class BasePluginItem:
     name: ClassVar[str]
@@ -85,17 +97,18 @@ class BasePluginItem:
     """
     the configuration class if the plugin item can be configured (optional but if provides one, it should be a subclass of PluginConfiguration)
     """
-    _config: Dict
-    """
-    the config of instance
-    """
+    _instance: PluginInstance | None
 
-    def __init__(self, config: Dict | None = None):
-        self._config = config
+    def __init__(self, instance: PluginInstance | None = None) -> None:
+        self._instance = instance
 
     @property
     def config(self):
-        return self._config
+        return self._instance.config
+
+    @property
+    def plugin_instance(self):
+        return self._instance
 
     def __init_subclass__(cls, **kwargs):
         super().__init_subclass__(**kwargs)
@@ -111,11 +124,35 @@ class BasePluginItem:
         if not issubclass(plugin_type, BasePluginType):
             raise TypeError("Plugin items must point to a correct type of plugin type through `plugin_type` property")
         else:
-            for attr_name, prop in plugin_type.__dict__.items():
-                if getattr(prop, "__isabstractmethod__", False):
-                    if not hasattr(cls, attr_name):
-                        raise AttributeError(f"Plugin item for {plugin_type.name} must implement {attr_name}")
+            for attr_name in plugin_type.__abstractmethods__:
+                attr = getattr(cls, attr_name, None)
+                if attr is None or not callable(attr):
+                    raise AttributeError(
+                        f"Plugin item for {plugin_type.name} must implement {attr_name}"
+                    )
         # check if class provides a configuration form and then if the form is of correct type
         configuration = getattr(cls, "configuration", None)
-        if configuration is not None and not issubclass(configuration, PluginConfiguration):
+        if not isinstance(configuration, type) or not issubclass(configuration, PluginConfiguration):
             raise TypeError("configuration must be a subclass of PluginConfiguration")
+
+    def __getattr__(self, item):
+        if item.startswith("_"):
+            raise AttributeError(item)
+
+        plugin_type_method = self.plugin_type.__dict__.get(item)
+
+        if plugin_type_method is None:
+            raise AttributeError(item)
+
+        if not callable(plugin_type_method):
+            raise AttributeError(item)
+
+        if getattr(plugin_type_method, "__isabstractmethod__", False):
+            raise AttributeError(item)
+
+        def delegated_method(*args, **kwargs):
+            plugin_type_instance = self.plugin_type(self)
+            method = getattr(plugin_type_instance, item)
+            return method(*args, **kwargs)
+
+        return delegated_method
