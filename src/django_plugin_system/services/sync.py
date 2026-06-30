@@ -42,6 +42,8 @@ def sync_registered_plugins_to_db(
     for _, pt in _registry_plugin_types.items():
         interface = pt["interface"]
         is_base_plugin_type = issubclass(interface, BasePluginType)
+        interface_base : type = interface.__base__
+        is_sub_base_plugin_type = is_base_plugin_type and interface_base.__base__ == BasePluginType
         pt_name = interface.name if is_base_plugin_type else pt["name"]
         pt_description = interface.description if is_base_plugin_type else pt.get("description", "")
         defaults = {"description": pt_description}
@@ -53,6 +55,15 @@ def sync_registered_plugins_to_db(
             obj, created = PluginType.objects.get_or_create(
                 name=pt_name, manager=interface.__module__, defaults=defaults
             )
+        if is_sub_base_plugin_type:
+            parent_obj = PluginType.get_plugin_type_by_class(interface_base)
+            if parent_obj:
+                obj.parent = parent_obj
+            else:
+                parent_defaults = {"description": interface.__base__.description}
+                obj.parent = PluginType.objects.create(name=interface.__base__, manager=interface.__base__.__module__,defaults=parent_defaults)
+                result['types_created'] += 1
+            obj.save()
         valid_plugin_types.append(obj.id)
         if created:
             result["types_created"] += 1

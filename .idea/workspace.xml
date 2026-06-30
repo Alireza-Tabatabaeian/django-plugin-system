@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8494541b-8d6d-48b6-937e-6331431688a4" name="Changes" comment="Version 2 Finalized">
+    <list default="true" id="8494541b-8d6d-48b6-937e-6331431688a4" name="Changes" comment="Version 2.0.2 now allows PluginType inheritance.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/django_plugin_system/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/django_plugin_system/plugin_core.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/plugin_core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/register.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/register.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/django_plugin_system/services/sync.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/django_plugin_system/services/sync.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781956310815</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Version 2.0.2 now allows PluginType inheritance.">
+      <option name="closed" value="true" />
+      <created>1782135914919</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1782135914919</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,7 +223,8 @@
     <MESSAGE value="references to .models removed from init file, to avoid app ready error" />
     <MESSAGE value="management was typed incorrectly" />
     <MESSAGE value="Version 2 Finalized" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 2 Finalized" />
+    <MESSAGE value="Version 2.0.2 now allows PluginType inheritance." />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 2.0.2 now allows PluginType inheritance." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/django_plugin_system$plugin_core.coverage" NAME="plugin_core Coverage Results" MODIFIED="1779723645129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/django_plugin_system" />

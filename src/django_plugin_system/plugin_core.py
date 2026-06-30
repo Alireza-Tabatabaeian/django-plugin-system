@@ -8,6 +8,9 @@ from django.forms import Form
 if TYPE_CHECKING:
     from .models import PluginInstance
 
+def required_plugin_item_method(func):
+    func.__required_plugin_item_method__ = True
+    return func
 
 class PluginConfiguration:
     form_class: ClassVar[Type[Form]]
@@ -64,13 +67,13 @@ class BasePluginType(ABC):
 
         # first check if class provides an abstract method or not, as it should
         has_abstract = any(
-            getattr(value, "__isabstractmethod__", False)
+            getattr(value, "__isabstractmethod__", False) or getattr(value, "__required_plugin_item_method__", False)
             for value in cls.__dict__.values()
         )
 
         # raise an error if it doesn't
         if not has_abstract:
-            raise TypeError("Plugin type class must have at least one abstractmethod")
+            raise TypeError("Plugin type class must have at least one abstract or required plugin item method")
 
         # the class should also provide a name for plugin type
         if not hasattr(cls, 'name'):
@@ -124,15 +127,18 @@ class BasePluginItem:
         if not issubclass(plugin_type, BasePluginType):
             raise TypeError("Plugin items must point to a correct type of plugin type through `plugin_type` property")
         else:
-            for attr_name in plugin_type.__abstractmethods__:
-                attr = getattr(cls, attr_name, None)
-                if attr is None or not callable(attr):
-                    raise AttributeError(
-                        f"Plugin item for {plugin_type.name} must implement {attr_name}"
-                    )
+            for attr_name, prop in plugin_type.__dict__.items():
+                if getattr(prop,"__isabstractmethod__", False) or getattr(prop, "__required_plugin_item_method__", False):
+                    item_method = cls.__dict__.get(attr_name)
+
+                    if item_method is None or not callable(item_method):
+                        raise TypeError(
+                            f"{cls.__name__} must implement `{attr_name}` "
+                            f"required by plugin type `{plugin_type.name}`"
+                        )
         # check if class provides a configuration form and then if the form is of correct type
         configuration = getattr(cls, "configuration", None)
-        if not isinstance(configuration, type) or not issubclass(configuration, PluginConfiguration):
+        if isinstance(configuration, type) and not issubclass(configuration, PluginConfiguration):
             raise TypeError("configuration must be a subclass of PluginConfiguration")
 
     def __getattr__(self, item):

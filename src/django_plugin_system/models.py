@@ -1,12 +1,12 @@
 from __future__ import annotations
 
 import uuid
-from typing import ClassVar, List, Type
+from typing import ClassVar, List, Type, Self
 
 from django.conf import settings
 from django.core.cache import cache
 from django.db import models
-from django.db.models import UniqueConstraint, Index
+from django.db.models import UniqueConstraint, Index, Q
 from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 from encrypted_fields.fields import EncryptedJSONField
@@ -28,6 +28,7 @@ class PluginType(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100, db_index=True)
     manager = models.CharField(max_length=100)  # module providing the plugin type
+    parent = models.ForeignKey('self', on_delete=models.SET_NULL,null=True, blank=True,related_name='parent_type')
     description = models.TextField()
 
     class Meta:
@@ -172,8 +173,8 @@ class PluginInstance(models.Model):
                 return plugin
         qs = (
             PluginInstance.objects
-            .select_related("item", "item__plugin_type")
-            .filter(item__plugin_type=plugin_type)
+            .select_related("item", "item__plugin_type", "item__plugin_type__parent")
+            .filter(Q(item__plugin_type=plugin_type ) | Q(item__plugin_type__parent=plugin_type))
             .exclude(status=PluginStatus.DISABLED)  # only prevent disabled instances
             .order_by('priority', "id")
         )
@@ -191,8 +192,8 @@ class PluginInstance(models.Model):
     def get_available_plugins(plugin_type: PluginType) -> List[PluginInstance]:
         return list(
             PluginInstance.objects
-            .select_related("item", "item__plugin_type")
-            .filter(item__plugin_type=plugin_type, status=PluginStatus.ACTIVE)
+            .select_related("item", "item__plugin_type", "item__plugin_type__parent")
+            .filter(Q(item__plugin_type=plugin_type) | Q(item__plugin_type__parent=plugin_type), Q(status=PluginStatus.ACTIVE))
             .order_by('priority')
         )
 
@@ -200,8 +201,8 @@ class PluginInstance(models.Model):
     def get_reserved_plugins(plugin_type: PluginType) -> List[PluginInstance]:
         return list(
             PluginInstance.objects
-            .select_related("item", "item__plugin_type")
-            .filter(item__plugin_type=plugin_type, status=PluginStatus.RESERVED)
+            .select_related("item", "item__plugin_type", "item__plugin_type__parent")
+            .filter(Q(item__plugin_type=plugin_type) | Q(item__plugin_type__parent=plugin_type), Q(status=PluginStatus.RESERVED))
             .order_by('priority')
         )
 

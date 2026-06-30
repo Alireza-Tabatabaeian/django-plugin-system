@@ -21,8 +21,13 @@ def register_plugin_type(plugin_type: PluginTypeRegistry):
     is_base_plugin_type = issubclass(interface, BasePluginType)
     if not is_base_plugin_type and not issubclass(interface, ABC):
         raise TypeError("Interface must be a subclass of BasePluginType or ABC")
-    if not getattr(interface, '__abstractmethods__', None):
-        raise TypeError("Interface must have at least one abstractmethod")
+    # first check if class provides an abstract method or not, as it should
+    has_abstract = any(
+        getattr(value, "__isabstractmethod__", False) or getattr(value, "__required_plugin_item_method__", False)
+        for value in interface.__dict__.values()
+    )
+    if not has_abstract:
+        raise TypeError("Interface must have at least one abstract or required plugin item method")
     if not is_base_plugin_type:
         warnings.warn(
             "The interface should be a subclass of BasePluginType in version 3.0+"
