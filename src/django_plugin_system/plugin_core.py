@@ -82,6 +82,11 @@ class BasePluginType(ABC):
     def __init__(self, plugin_item: BasePluginItem):
         self._plugin_item = plugin_item
 
+    @classmethod
+    def __plugin_item_validator__(cls, plugin_item_cls: Type[BasePluginItem]):
+        if getattr(cls, "__plugin_item_validator__", False):
+            cls.__plugin_item_validator__(plugin_item_cls)
+
 
 class BasePluginItem:
     name: ClassVar[str]
@@ -136,6 +141,7 @@ class BasePluginItem:
                             f"{cls.__name__} must implement `{attr_name}` "
                             f"required by plugin type `{plugin_type.name}`"
                         )
+            plugin_type.__plugin_item_validator__(cls)
         # check if class provides a configuration form and then if the form is of correct type
         configuration = getattr(cls, "configuration", None)
         if isinstance(configuration, type) and not issubclass(configuration, PluginConfiguration):
